@@ -37,19 +37,25 @@ Redis는 대표적인 NoSQL이며 메모리 DB, 캐쉬 기능을 지원한다.<b
 Redis는 아래와 같이 5가지 Data type이 존재하며, key와 value의 쌍으로 이루어 진다.<br>
 이때, String은 Key와 Value가 1:1 관계이고 나머지는 1:N의 관계로 이루어 진다.<br>
 
+|Data Type|KEY|VALUE|
 |------|---|---|
 |Strings|key|value|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
+|Lists|key|value, value2, ...|
+|Sets|key|value, value2, ...|
+|Sorted Sets|key|value, value2, ...|
+|Hashes|key|value, value2, ...|
+
 
 
 ## Strings
 
-|제목|내용|설명|
-|------|---|---|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
+|명령어|설명|
+|------|---|
+|set key value|key에 value를 설정|
+|get key|key의 value을 출력|
+|exists key|key가 존재하는지 확인, 존재하면 1, 없으면 0|
+|del key [key ...]|key를 삭제|
+|keys pattern|정규 표현식을 활용해 키를 검색|
 
 
 ```
