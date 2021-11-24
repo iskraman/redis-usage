@@ -48,7 +48,7 @@ Redis는 아래와 같이 5가지 Data type이 존재하며, key와 value의 쌍
 
 
 ## Strings
-가장 기본적인 KEY:Value의 1:1 데이터 타입을 생성한다.
+가장 기본적인 KEY:Value의 1:1 String 데이터 타입을 생성한다.
 
 |명령어|설명|
 |------|---|
