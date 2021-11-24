@@ -35,7 +35,7 @@ PONG
 ## Basic Concepts
 Redis는 대표적인 NoSQL이며 메모리 DB, 캐쉬, Pub/Sub 기능등을 지원한다.<br>
 Redis는 아래와 같이 5가지 Data type이 존재하며, key와 value의 쌍으로 이루어 진다.<br>
-이때, String은 Key와 Value가 1:1 관계이고 나머지는 1:N의 관계로 이루어 진다.<br>
+이때, String은 Key와 Value가 1:1 관계이고 나머지는 1:N의 관계로 이루어질 수 있다.<br>
 
 |Data Type|KEY|VALUE|
 |------|---|---|
@@ -54,18 +54,45 @@ Redis는 아래와 같이 5가지 Data type이 존재하며, key와 value의 쌍
 |set key value|key에 value를 설정|
 |get key|key의 value을 출력|
 |exists key|key가 존재하는지 확인, 존재하면 1, 없으면 0|
-|del key [key ...]|key를 삭제|
+|append key value|기존 key의 value에 값을 추가|
 |keys pattern|정규 표현식을 활용해 키를 검색|
-
+|del key [key ...]|key를 삭제|
 
 ```
-// mykey에 myvalue값을 할당한다.
+// key에 value값을 할당한다.
 127.0.0.1:6379> set mykey myvalue
 OK
 
-// mykey의 값을 조회한다.
+// key의 값을 조회한다.
 127.0.0.1:6379> get mykey
 "myvalue"
+
+// key가 존재하는지 확인한다.
+127.0.0.1:6379> exists mykey
+(integer) 1
+127.0.0.1:6379> exists yourkey
+(integer) 0
+
+// 기존 key의 value에 값을 추가한다.
+127.0.0.1:6379> append mykey " is high"
+(integer) 15
+127.0.0.1:6379> get mykey
+"myvalue is high"
+
+// 정규표현식을 활용해 key를 검색한다.
+127.0.0.1:6379> keys *key
+1) "mykey"
+127.0.0.1:6379> keys my*
+1) "mykey"
+
+// key를 삭제한다.
+127.0.0.1:6379> del mykey
+(integer) 1
+127.0.0.1:6379> exists mykey
+(integer) 0
+
+
+
 ```
 
 
