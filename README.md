@@ -2,7 +2,7 @@
 Redis 설치 및 명령어 사용법
 
 ## Install
-테스트를 위해 우분투 서버 기준 Redis Server와 Client를 설치하고 server를 백그라운드로 실행한다.
+테스트를 위해 우분투 서버 기준 Redis Server와 Client를 설치하고 server를 백그라운드로 실행한다.<br>
 client를 실행시키고 ping 명령으로 통신이 잘되는지 확인한다.
 ```shell
 $> sudo apt-get install redis-server redis-tools
