@@ -32,7 +32,7 @@ PONG
 
 ```
 
-## Basic : 기본 개념
+## Basic Concepts
 Redis는 대표적인 NoSQL이며 메모리 DB, 캐쉬, Pub/Sub 기능등을 지원한다.<br>
 Redis는 아래와 같이 5가지 Data type이 존재하며, key와 value의 쌍으로 이루어 진다.<br>
 이때, String은 Key와 Value가 1:1 관계이고 나머지는 1:N의 관계로 이루어 진다.<br>
@@ -59,8 +59,11 @@ Redis는 아래와 같이 5가지 Data type이 존재하며, key와 value의 쌍
 
 
 ```
+// mykey에 myvalue값을 할당한다.
 127.0.0.1:6379> set mykey myvalue
 OK
+
+// mykey의 값을 조회한다.
 127.0.0.1:6379> get mykey
 "myvalue"
 ```
