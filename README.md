@@ -100,32 +100,32 @@ OK
 |SETEX key seconds value|key에 TTL 값과 함께 value 설정|
 |TTL key|key에 설정된 TTL 값 출력|
 ```
-127.0.0.1:6379> set mykey 100
+127.0.0.1:6379> SET mykey 100
 OK
-127.0.0.1:6379> get mykey
+127.0.0.1:6379> GET mykey
 "100"
 // 특정 Key에 TTL 30초 설정
-127.0.0.1:6379> expire mykey 30
+127.0.0.1:6379> EXPIRE mykey 30
 (integer) 1
 // Key에 설정된 TTL 값 확인
-127.0.0.1:6379> ttl mykey
+127.0.0.1:6379> TTL mykey
 (integer) 25
-127.0.0.1:6379> ttl mykey
+127.0.0.1:6379> TTL mykey
 (integer) 17
-127.0.0.1:6379> ttl mykey
+127.0.0.1:6379> TTL mykey
 (integer) 5
 // 30초 후 Expire된 Key 확인
-127.0.0.1:6379> ttl mykey
+127.0.0.1:6379> TTL mykey
 (integer) -2
 ```
 ```
 // Key 설정부터 TTL 값(10초)을 부여하여 세팅
-127.0.0.1:6379> setex mykey 10 "hello"
+127.0.0.1:6379> SETEX mykey 10 "hello"
 OK
-127.0.0.1:6379> ttl mykey
+127.0.0.1:6379> TTL mykey
 (integer) 5
 // 10초뒤 Expire
-127.0.0.1:6379> ttl mykey
+127.0.0.1:6379> TTL mykey
 (integer) -2
 ```
 
